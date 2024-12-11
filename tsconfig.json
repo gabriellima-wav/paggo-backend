@@ -9,6 +9,7 @@
     "target": "ES2021",
     "sourceMap": true,
     "outDir": "./dist",
+    "rootDir": "./", // Mude de "./src" para "./"
     "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
@@ -17,5 +18,15 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
-  }
+  },
+  "include": [
+    "src/**/*", // Inclui todos os arquivos da pasta src
+    "auth/**/*", // Inclui os arquivos da pasta auth se estiver fora de src
+    "test/**/*" // Inclui os arquivos de teste se necessário
+  ],
+  "exclude": [
+    "node_modules", // Exclui a pasta node_modules
+    "dist", // Exclui a pasta dist
+    "**/*.spec.ts" // Exclui os arquivos de teste específicos
+  ]
 }
